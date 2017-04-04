@@ -1,0 +1,342 @@
+# project  configured on Mon Apr  3 18:25:20 2017 by
+# waf 1.8.2 (abi 98, python 20706f0 on linux2)
+# using ./waf configure
+#
+----------------------------------------
+Setting top to
+/vagrant/AutoNdn-Project/autondn-cip
+----------------------------------------
+Setting out to
+/vagrant/AutoNdn-Project/autondn-cip/build
+----------------------------------------
+Checking for 'g++' (C++ compiler)
+find program=['g++', 'c++'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games'] var='CXX' -> ['/usr/bin/g++']
+find program=['ar'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games'] var='AR' -> ['/usr/bin/ar']
+/usr/bin/g++
+----------------------------------------
+Checking supported CXXFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_2dee2ee234fc4c2dc602ee46bf890f3c/test.cpp[0m
+
+['/usr/bin/g++', '-Werror', '-std=c++11', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_2dee2ee234fc4c2dc602ee46bf890f3c/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_2dee2ee234fc4c2dc602ee46bf890f3c/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_2dee2ee234fc4c2dc602ee46bf890f3c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+-std=c++11
+----------------------------------------
+Checking supported CXXFLAGS
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_c5d6bd3e3158324c0adb20029c9bb6e2/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-O2', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_c5d6bd3e3158324c0adb20029c9bb6e2/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_c5d6bd3e3158324c0adb20029c9bb6e2/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_c5d6bd3e3158324c0adb20029c9bb6e2/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_09e0d809c214ab0168842c0f1b95d90e/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-g', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_09e0d809c214ab0168842c0f1b95d90e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_09e0d809c214ab0168842c0f1b95d90e/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_09e0d809c214ab0168842c0f1b95d90e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_0c330615ddf3a8246dbbf62606f70832/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-pedantic', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_0c330615ddf3a8246dbbf62606f70832/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_0c330615ddf3a8246dbbf62606f70832/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_0c330615ddf3a8246dbbf62606f70832/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_8c4303c11992a5dcd176bf243b73dfae/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-Wall', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_8c4303c11992a5dcd176bf243b73dfae/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_8c4303c11992a5dcd176bf243b73dfae/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_8c4303c11992a5dcd176bf243b73dfae/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_a659f1a6f6bb8ae93658efb439b56fa4/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-Wextra', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_a659f1a6f6bb8ae93658efb439b56fa4/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_a659f1a6f6bb8ae93658efb439b56fa4/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_a659f1a6f6bb8ae93658efb439b56fa4/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_5f9bbc3f8aceaea89aab9bb796644698/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-Wno-unused-parameter', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_5f9bbc3f8aceaea89aab9bb796644698/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_5f9bbc3f8aceaea89aab9bb796644698/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_5f9bbc3f8aceaea89aab9bb796644698/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_8085bfc7cd8e61832fc3b25c1ce073dd/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-Wno-missing-field-initializers', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_8085bfc7cd8e61832fc3b25c1ce073dd/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_8085bfc7cd8e61832fc3b25c1ce073dd/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_8085bfc7cd8e61832fc3b25c1ce073dd/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_e9822fb2da3bafdea79dc7d44c3b1876/test.cpp[0m
+
+['/usr/bin/g++', '-std=c++11', '-Werror', '-fdiagnostics-color', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_e9822fb2da3bafdea79dc7d44c3b1876/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_e9822fb2da3bafdea79dc7d44c3b1876/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_e9822fb2da3bafdea79dc7d44c3b1876/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+-O2 -g -pedantic -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -fdiagnostics-color
+----------------------------------------
+Checking for program 'pkg-config'
+/usr/bin/pkg-config
+find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games'] var='PKGCONFIG' -> ['/usr/bin/pkg-config']
+----------------------------------------
+Checking for 'libndn-cxx'
+['/usr/bin/pkg-config', '--cflags', '--libs', 'libndn-cxx']
+out: -pthread -I/usr/local/include  -pthread -L/usr/local/lib -lndn-cxx -lboost_system -lboost_filesystem -lboost_date_time -lboost_iostreams -lboost_regex -lboost_program_options -lboost_chrono -lboost_thread -lboost_log -lboost_log_setup -lcryptopp -lssl -lcrypto -lsqlite3 -lrt -lpthread  
+
+yes
+----------------------------------------
+Checking boost includes
+1.54.0
+----------------------------------------
+Checking boost libs
+Found the boost path in /usr/lib/x86_64-linux-gnu with the libraries:
+    /usr/lib/x86_64-linux-gnu/libboost_atomic.a
+    /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+    /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_chrono.a
+    /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+    /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_context.a
+    /usr/lib/x86_64-linux-gnu/libboost_context.so
+    /usr/lib/x86_64-linux-gnu/libboost_context.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_coroutine.a
+    /usr/lib/x86_64-linux-gnu/libboost_date_time.a
+    /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+    /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_exception.a
+    /usr/lib/x86_64-linux-gnu/libboost_filesystem.a
+    /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+    /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_graph.a
+    /usr/lib/x86_64-linux-gnu/libboost_graph.so
+    /usr/lib/x86_64-linux-gnu/libboost_graph.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_graph_parallel.a
+    /usr/lib/x86_64-linux-gnu/libboost_graph_parallel.so
+    /usr/lib/x86_64-linux-gnu/libboost_graph_parallel.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_iostreams.a
+    /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+    /usr/lib/x86_64-linux-gnu/libboost_iostreams.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_locale.a
+    /usr/lib/x86_64-linux-gnu/libboost_locale.so
+    /usr/lib/x86_64-linux-gnu/libboost_locale.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_log.a
+    /usr/lib/x86_64-linux-gnu/libboost_log.so
+    /usr/lib/x86_64-linux-gnu/libboost_log.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_log_setup.a
+    /usr/lib/x86_64-linux-gnu/libboost_log_setup.so
+    /usr/lib/x86_64-linux-gnu/libboost_log_setup.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99.a
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99.so
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99f.a
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99f.so
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99f.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99l.a
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99l.so
+    /usr/lib/x86_64-linux-gnu/libboost_math_c99l.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1.a
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1.so
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1f.a
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1f.so
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1f.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1l.a
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1l.so
+    /usr/lib/x86_64-linux-gnu/libboost_math_tr1l.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_mpi.a
+    /usr/lib/x86_64-linux-gnu/libboost_mpi.so
+    /usr/lib/x86_64-linux-gnu/libboost_mpi.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python-py27.a
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python-py27.so
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python-py27.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python-py34.a
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python-py34.so
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python-py34.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python.a
+    /usr/lib/x86_64-linux-gnu/libboost_mpi_python.so
+    /usr/lib/x86_64-linux-gnu/libboost_prg_exec_monitor.a
+    /usr/lib/x86_64-linux-gnu/libboost_prg_exec_monitor.so
+    /usr/lib/x86_64-linux-gnu/libboost_prg_exec_monitor.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_program_options.a
+    /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+    /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_python-py27.a
+    /usr/lib/x86_64-linux-gnu/libboost_python-py27.so
+    /usr/lib/x86_64-linux-gnu/libboost_python-py27.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_python-py34.a
+    /usr/lib/x86_64-linux-gnu/libboost_python-py34.so
+    /usr/lib/x86_64-linux-gnu/libboost_python-py34.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_python.a
+    /usr/lib/x86_64-linux-gnu/libboost_python.so
+    /usr/lib/x86_64-linux-gnu/libboost_random.a
+    /usr/lib/x86_64-linux-gnu/libboost_random.so
+    /usr/lib/x86_64-linux-gnu/libboost_random.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_regex.a
+    /usr/lib/x86_64-linux-gnu/libboost_regex.so
+    /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_serialization.a
+    /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+    /usr/lib/x86_64-linux-gnu/libboost_serialization.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_signals.a
+    /usr/lib/x86_64-linux-gnu/libboost_signals.so
+    /usr/lib/x86_64-linux-gnu/libboost_signals.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_system.a
+    /usr/lib/x86_64-linux-gnu/libboost_system.so
+    /usr/lib/x86_64-linux-gnu/libboost_system.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_test_exec_monitor.a
+    /usr/lib/x86_64-linux-gnu/libboost_thread.a
+    /usr/lib/x86_64-linux-gnu/libboost_thread.so
+    /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_timer.a
+    /usr/lib/x86_64-linux-gnu/libboost_timer.so
+    /usr/lib/x86_64-linux-gnu/libboost_timer.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.a
+    /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so
+    /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_wave.a
+    /usr/lib/x86_64-linux-gnu/libboost_wave.so
+    /usr/lib/x86_64-linux-gnu/libboost_wave.so.1.54.0
+    /usr/lib/x86_64-linux-gnu/libboost_wserialization.a
+    /usr/lib/x86_64-linux-gnu/libboost_wserialization.so
+    /usr/lib/x86_64-linux-gnu/libboost_wserialization.so.1.54.0
+Trying pattern boost_system(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_system(-1_54)+
+Trying pattern boost_system(-1_54)+
+Trying pattern boost_system(-gcc[0-9]{0,3})+
+Trying pattern boost_system
+Found boost lib libboost_system.a
+Trying pattern boost_chrono(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_chrono(-1_54)+
+Trying pattern boost_chrono(-1_54)+
+Trying pattern boost_chrono(-gcc[0-9]{0,3})+
+Trying pattern boost_chrono
+Found boost lib libboost_chrono.a
+Trying pattern boost_program_options(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_program_options(-1_54)+
+Trying pattern boost_program_options(-1_54)+
+Trying pattern boost_program_options(-gcc[0-9]{0,3})+
+Trying pattern boost_program_options
+Found boost lib libboost_program_options.a
+Trying pattern boost_iostreams(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_iostreams(-1_54)+
+Trying pattern boost_iostreams(-1_54)+
+Trying pattern boost_iostreams(-gcc[0-9]{0,3})+
+Trying pattern boost_iostreams
+Found boost lib libboost_iostreams.a
+Trying pattern boost_thread(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_thread(-1_54)+
+Trying pattern boost_thread(-1_54)+
+Trying pattern boost_thread(-gcc[0-9]{0,3})+
+Trying pattern boost_thread
+Found boost lib libboost_thread.a
+Trying pattern boost_regex(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_regex(-1_54)+
+Trying pattern boost_regex(-1_54)+
+Trying pattern boost_regex(-gcc[0-9]{0,3})+
+Trying pattern boost_regex
+Found boost lib libboost_regex.a
+Trying pattern boost_filesystem(-gcc[0-9]{0,3})+(-1_54)+
+Trying pattern boost_filesystem(-1_54)+
+Trying pattern boost_filesystem(-1_54)+
+Trying pattern boost_filesystem(-gcc[0-9]{0,3})+
+Trying pattern boost_filesystem
+Found boost lib libboost_filesystem.a
+ok
+----------------------------------------
+Checking for boost linkage
+==>
+
+#include <boost/system/error_code.hpp>
+int main() { boost::system::error_code c; }
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_1575e9ce6594f5bd5bc724b100c50c0e/test.cpp[0m
+
+['/usr/bin/g++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-fdiagnostics-color', '-std=c++11', '-I/usr/include', '-DNDEBUG', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_1575e9ce6594f5bd5bc724b100c50c0e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_1575e9ce6594f5bd5bc724b100c50c0e/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_1575e9ce6594f5bd5bc724b100c50c0e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_chrono', '-lboost_program_options', '-lboost_iostreams', '-lboost_thread', '-lboost_regex', '-lboost_filesystem']
+==>
+
+#include <boost/thread.hpp>
+int main() { boost::thread t; }
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_573c6384e4751f6b6e7ea29d84291353/test.cpp[0m
+
+['/usr/bin/g++', '-O2', '-g', '-pedantic', '-Wall', '-Wextra', '-Wno-unused-parameter', '-Wno-missing-field-initializers', '-fdiagnostics-color', '-std=c++11', '-I/usr/include', '-DNDEBUG', '../test.cpp', '-c', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_573c6384e4751f6b6e7ea29d84291353/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_573c6384e4751f6b6e7ea29d84291353/testbuild/testprog[0m
+
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/vagrant/AutoNdn-Project/autondn-cip/build/.conf_check_573c6384e4751f6b6e7ea29d84291353/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/x86_64-linux-gnu', '-lboost_system', '-lboost_chrono', '-lboost_program_options', '-lboost_iostreams', '-lboost_thread', '-lboost_regex', '-lboost_filesystem']
+ok

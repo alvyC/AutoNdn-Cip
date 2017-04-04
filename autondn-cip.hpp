@@ -24,16 +24,21 @@ private:
   initializeKey();
 
   void
-  setKeyInterestFilter();
+  setInterestFilter(); // set interest filter for general and key
+
+  void
+  onKeyRequestInitInterest(const ndn::Name&, const ndn::Interest& interest);
 
   void
   onKeyInterest(const ndn::Name& name, const ndn::Interest& interest);
 
   void
-  setCertIssueInterestFilter();
-
+  onCertInterest(const ndn::Name& name, const ndn::Interest& interest);
+public:
+  static const ndn::Name KeyRequestInitPrefix;
 private:
   ndn::Face& m_face;
+  ndn::Scheduler& m_scheduler;
   ndn::Name& m_name;
   ndn::security::SigningInfo m_signingInfo;
 };
