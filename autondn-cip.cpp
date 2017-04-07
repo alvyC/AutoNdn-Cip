@@ -13,7 +13,9 @@ namespace autondn_cip {
 
   void
   AutoNdnCip::initializeKey() {
-
+    ndn::Name defaultIdentity = m_name;
+    m_signingInfo = ndn::security::SigningInfo(ndn::security::SigningInfo::SIGNER_TYPE_ID, defaultIdentity);
+    m_keyChain.addIdentity(defaultIdentity);
   }
 
   void
@@ -39,7 +41,7 @@ namespace autondn_cip {
     //  set interest filter on proxy's name (/autondn/CIP/<cip-id>)
     // The interest name: /autondn/CIP/<cip-id>/E-CIP{manufacturer, E-Man{vid, K-VCurr, K-VNew}}
     m_face.setInterestFilter(m_name,
-                             std::bind(&AutoNdnCip::onCertInterest,
+                             std::bind(&AutoNdnCip::onVehicleCertInterest,
                                        this, _1, _2),
                              std::bind([] {}),
                              std::bind([] {}));
@@ -48,16 +50,26 @@ namespace autondn_cip {
   void
   AutoNdnCip::onKeyRequestInitInterest(const ndn::Name&, const ndn::Interest& interest) {
     // send name and public key of the cip
+    // need to do encoding/ decoding?
+
   }
 
   void
   AutoNdnCip::onKeyInterest(const ndn::Name& name, const ndn::Interest& interest) {
     // send public key of the cip
+
   }
 
   void
-  AutoNdnCip::onCertInterest(const ndn::Name& name, const ndn::Interest& interest) {
-    // change the name of the interest and send it to manufacturer.
+  AutoNdnCip::onVehicleCertInterest(const ndn::Name& name, const ndn::Interest& interest) {
+     /*  Interest: /autondn/CIP/<cip-id>/E-CIP{manufacturer, E-Man{vid, K-VCurr, K-VNew}}
+         (1) Decrypt the "manufacturer" part
+         (2) Construct a new signed interest
+             New Interest: /<manufacturer>/ E-Man{vid, K-VCurr, K-VNew}
+         (3) Send the new interest to manufacturer
+     */
+
+
   }
 
   void
