@@ -46,7 +46,7 @@ def build(bld):
         )
 
     autondn = bld(
-        target='bin/autondn',
+        target='bin/autondn-cip',
         features='cxx cxxprogram',
         source='main.cpp',
         use='autondn-objects',

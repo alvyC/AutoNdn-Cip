@@ -1,5 +1,7 @@
 #include "autondn-cip.hpp"
 
+#include <ndn-cxx/util/io.hpp>
+
 namespace autondn_cip {
 
   const ndn::Name AutoNdnCip::KeyRequestInitPrefix = ndn::Name("/autondn/CIP/request-key");
@@ -25,8 +27,7 @@ namespace autondn_cip {
                              std::bind(&AutoNdnCip::onKeyRequestInitInterest,
                                        this, _1, _2),
                              std::bind([] {}),
-                             std::bind([] {}),
-                             m_signingInfo);
+                             std::bind([] {}));
 
     // set interest filter for interest for CIP's key: /autondn/CIP/<cip-id>/KEYS
     ndn::Name keyPrefix = m_name;
@@ -35,8 +36,7 @@ namespace autondn_cip {
                              std::bind(&AutoNdnCip::onKeyInterest,
                                        this, _1, _2),
                              std::bind([] {}),
-                             std::bind([] {}),
-                             m_signingInfo);
+                             std::bind([] {}));
 
     //  set interest filter on proxy's name (/autondn/CIP/<cip-id>)
     // The interest name: /autondn/CIP/<cip-id>/E-CIP{manufacturer, E-Man{vid, K-VCurr, K-VNew}}
@@ -48,10 +48,18 @@ namespace autondn_cip {
   }
 
   void
-  AutoNdnCip::onKeyRequestInitInterest(const ndn::Name&, const ndn::Interest& interest) {
+  AutoNdnCip::onKeyRequestInitInterest(const ndn::Name& name, const ndn::Interest& interest) {
     // send name and public key of the cip
-    // need to do encoding/ decoding?
+    std::shared_ptr<const ndn::IdentityCertificate> cert = m_certStore.getCertificate();
+    std::shared_ptr<ndn::Data> data = std::make_shared<ndn::Data>();
 
+    ndn::Name dataName = interest.getName();
+    dataName.append(m_name);
+
+    data->setName(dataName);
+    data->setContent(cert->wireEncode());
+
+    m_face.put(*data);
   }
 
   void
@@ -68,14 +76,19 @@ namespace autondn_cip {
              New Interest: /<manufacturer>/ E-Man{vid, K-VCurr, K-VNew}
          (3) Send the new interest to manufacturer
      */
+  }
 
-
+  void
+  AutoNdnCip::loadCertToPublish() {
+    std::shared_ptr<ndn::IdentityCertificate> idCert = ndn::io::load<ndn::IdentityCertificate>("proxy.cert");
+    m_certStore.saveCertificate(idCert);
   }
 
   void
   AutoNdnCip::initialize() {
     initializeKey();
     setInterestFilter();
+    loadCertToPublish();
   }
 
   void
