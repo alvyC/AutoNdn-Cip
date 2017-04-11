@@ -6,6 +6,8 @@
 #include <ndn-cxx/security/key-chain.hpp>
 #include <ndn-cxx/security/signing-info.hpp>
 
+#include "certificate-store.hpp"
+
 namespace autondn_cip {
 
 class AutoNdnCip {
@@ -27,7 +29,10 @@ private:
   setInterestFilter();
 
   void
-  onKeyRequestInitInterest(const ndn::Name&, const ndn::Interest& interest);
+  loadCertToPublish();
+
+  void
+  onKeyRequestInitInterest(const ndn::Name& name, const ndn::Interest& interest);
 
   void
   onKeyInterest(const ndn::Name& name, const ndn::Interest& interest);
@@ -42,6 +47,7 @@ private:
   ndn::Name& m_name;
   ndn::KeyChain m_keyChain;
   ndn::security::SigningInfo m_signingInfo;
+  CertificateStore m_certStore;
 };
 
 }
