@@ -39,7 +39,7 @@ namespace autondn_cip {
                              std::bind([] {}));
 
     //  set interest filter on proxy's name (/autondn/CIP/<cip-id>)
-    // The interest name: /autondn/CIP/<cip-id>/E-CIP{manufacturer, E-Man{vid, K-VCurr, K-VNew}}
+    // The interest name: /autondn/CIP/<cip-id>/E-CIP{manufacturer}/ E-Man{vid}/ E-man{K-VCurr}/ E-man{K-VNew}
     m_face.setInterestFilter(m_name,
                              std::bind(&AutoNdnCip::onVehicleCertInterest,
                                        this, _1, _2),
@@ -68,13 +68,45 @@ namespace autondn_cip {
   }
 
   void
-  AutoNdnCip::onVehicleCertInterest(const ndn::Name& name, const ndn::Interest& interest) {
-     /*  Interest: /autondn/CIP/<cip-id>/E-CIP{manufacturer, E-Man{vid, K-VCurr, K-VNew}}
-         (1) Decrypt the "manufacturer" part
+  AutoNdnCip::onVehicleCertInterest(const ndn::Name& name, const ndn::Interest& originalInterest) {
+     /*  Interest:  /autondn/CIP/<cip-id>/E-CIP{manufacturer}/ E-Man{vid}/ E-man{K-VCurr}/ E-man{K-VNew}
+         (1) Decrypt the "manufacturer" part (need to get proxy's private key)
          (2) Construct a new signed interest
              New Interest: /<manufacturer>/ E-Man{vid, K-VCurr, K-VNew}
          (3) Send the new interest to manufacturer
      */
+
+    /* Step (1)
+       - Get cipher text of manufacturer name from the interest name
+       - Decrypt using private key of the proxy
+    */
+    std::string manufacturernameCipher = originalInterest.getName().get(-4).toUri();
+    ndn::Name proxyKeyName = m_keyChain.getDefaultKeyNameForIdentity(m_name);
+
+    std::vector<uint8_t> myVector(manufacturernameCipher.begin(), manufacturernameCipher.end());
+    uint8_t *p1 = &myVector[0];
+    ndn::ConstBufferPtr manufacturerNamePlainText = m_keyChain.getTpm().decryptInTpm(p1, myVector.size(), proxyKeyName, false);
+
+
+    /* Step (2)
+     */
+    std::string manufacturerNameString( reinterpret_cast<char const*>(manufacturerNamePlainText->buf()), manufacturerNamePlainText->size() );
+    ndn::Name interestToManName(manufacturerNameString);
+
+    for (unsigned int i = 4; i < originalInterest.getName().size(); ++i) {
+      interestToManName.append(originalInterest.getName().get(i));
+    }
+
+    /* Step (3)
+      - Create interest
+      - Sign the interest
+      - Send the interest
+     */
+    ndn::Interest interestToMan(interestToManName);
+    m_keyChain.sign(interestToMan);
+    m_face.expressInterest(interestToMan,
+                           std::bind(&AutoNdnCip::onReceivingVehicleCert, this, _1, _2, originalInterest), // got vehicle's cert, need to forward it to the vehicle
+                           std::bind([]{})); // timeout
   }
 
   void
@@ -93,5 +125,18 @@ namespace autondn_cip {
   void
   AutoNdnCip::run() {
     initialize();
+  }
+
+  void
+  AutoNdnCip::onReceivingVehicleCert(const ndn::Interest& sentInterest, const ndn::Data& data,
+                                     const ndn::Interest& originalInterest) {
+    /* (1) Create a new data packet from the received data packet.
+       (2) Sign the data and send it
+     */
+    std::shared_ptr<ndn::Data> newData = ndn::make_shared<ndn::Data>(data);
+    newData->setName(originalInterest.getName());
+
+    m_keyChain.sign(*newData);
+    m_face.put(*newData);
   }
 }

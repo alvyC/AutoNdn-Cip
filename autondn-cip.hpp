@@ -39,6 +39,10 @@ private:
 
   void
   onVehicleCertInterest(const ndn::Name& name, const ndn::Interest& interest);
+
+  void
+  onReceivingVehicleCert(const ndn::Interest&, const ndn::Data&, const ndn::Interest&);
+
 public:
   static const ndn::Name KeyRequestInitPrefix;
 private:
